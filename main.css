@@ -186,3 +186,14 @@ body {
 input {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .container {
+    justify-content: center;
+  }
+
+  .wrapper-titles {
+    order: 1;
+    max-width: 100%;
+  }
+}
