@@ -35,7 +35,7 @@ body {
   width: var(--size-conteiner);
 
   margin: auto;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem;
 
   background-color: var(--color-bg);
   border: 0.1rem solid var(--color-border);
@@ -60,6 +60,7 @@ body {
   border: 0.1rem solid var(--color-border);
   border-radius: 0.5rem;
   overflow: hidden;
+  transition-duration: 500ms;
 
   & img {
     width: 100%;
@@ -86,6 +87,7 @@ body {
 
 .title {
   width: 100vw;
+  transition-duration: 500ms;
 }
 
 .controls {
