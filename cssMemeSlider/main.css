@@ -61,6 +61,7 @@ body {
   border-radius: 0.5rem;
   overflow: hidden;
   transition-duration: 500ms;
+  opacity: 0;
 
   & img {
     width: 100%;
@@ -88,6 +89,7 @@ body {
 .title {
   width: 100vw;
   transition-duration: 500ms;
+  opacity: 0;
 }
 
 .controls {
@@ -160,6 +162,30 @@ body {
   transform: translateX(-500%);
 }
 
+#slide_1:checked~.wrapper .slide1 {
+  opacity: 1;
+}
+
+#slide_2:checked~.wrapper .slide2 {
+  opacity: 1;
+}
+
+#slide_3:checked~.wrapper .slide3 {
+  opacity: 1;
+}
+
+#slide_4:checked~.wrapper .slide4 {
+  opacity: 1;
+}
+
+#slide_5:checked~.wrapper .slide5 {
+  opacity: 1;
+}
+
+#slide_6:checked~.wrapper .slide6 {
+  opacity: 1;
+}
+
 
 #slide_1:checked~.wrapper-titles .title {
   transform: translateX(0);
@@ -183,6 +209,31 @@ body {
 
 #slide_6:checked~.wrapper-titles .title {
   transform: translateX(-500%);
+}
+
+
+#slide_1:checked~.wrapper-titles .title:nth-child(1) {
+  opacity: 1;
+}
+
+#slide_2:checked~.wrapper-titles .title:nth-child(2) {
+  opacity: 1;
+}
+
+#slide_3:checked~.wrapper-titles .title:nth-child(3) {
+  opacity: 1;
+}
+
+#slide_4:checked~.wrapper-titles .title:nth-child(4) {
+  opacity: 1;
+}
+
+#slide_5:checked~.wrapper-titles .title:nth-child(5) {
+  opacity: 1;
+}
+
+#slide_6:checked~.wrapper-titles .title:nth-child(6) {
+  opacity: 1;
 }
 
 input {
