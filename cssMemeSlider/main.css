@@ -1,0 +1,252 @@
+:root {
+  --count-slides: 6;
+
+  --size-conteiner: clamp(18rem, 80%, 60rem);
+  --size-font-text: 1.3rem;
+
+  --color-border: rgb(0, 0, 80);
+  --color-bg: rgb(0, 0, 80);
+  --color-text: rgb(220, 220, 220);
+  --color-nonactive-element: rgb(130, 160, 255);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  width: var(--size-conteiner);
+
+  margin: auto;
+  padding: 1rem 1rem 2rem;
+
+  background-color: var(--color-bg);
+  border: 0.1rem solid var(--color-border);
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: calc(var(--count-slides)*100%);
+}
+
+.slide {
+  width: 100vw;
+  height: 100%;
+
+  border: 0.1rem solid var(--color-border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition-duration: 500ms;
+  opacity: 0;
+
+  & img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+
+.wrapper-titles {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 55%;
+  overflow: hidden;
+
+  color: var(--color-text);
+  font-size: var(--size-font-text);
+}
+
+.titles {
+  display: flex;
+  width: calc(var(--count-slides)*100%);
+}
+
+.title {
+  width: 100vw;
+  transition-duration: 500ms;
+  opacity: 0;
+}
+
+.controls {
+  display: flex;
+
+  & label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    border-radius: 50%;
+
+    & div {
+      width: 0.5rem;
+      height: 0.5rem;
+
+      border-radius: 50%;
+      background-color: var(--color-nonactive-element);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover div {
+      cursor: pointer;
+      background-color: var(--color-text);
+    }
+  }
+}
+
+#slide_1:checked~.controls label:nth-child(1) div,
+#slide_2:checked~.controls label:nth-child(2) div,
+#slide_3:checked~.controls label:nth-child(3) div,
+#slide_4:checked~.controls label:nth-child(4) div,
+#slide_5:checked~.controls label:nth-child(5) div,
+#slide_6:checked~.controls label:nth-child(6) div {
+  background-color: var(--color-bg);
+  border: 0.12rem solid var(--color-nonactive-element);
+
+  &:hover {
+    border: 0.12rem solid var(--color-text);
+  }
+}
+
+#slide_1:checked~.wrapper .slide {
+  transform: translateX(0);
+}
+
+#slide_2:checked~.wrapper .slide {
+  transform: translateX(-100%);
+}
+
+#slide_3:checked~.wrapper .slide {
+  transform: translateX(-200%);
+}
+
+#slide_4:checked~.wrapper .slide {
+  transform: translateX(-300%);
+}
+
+#slide_5:checked~.wrapper .slide {
+  transform: translateX(-400%);
+}
+
+#slide_6:checked~.wrapper .slide {
+  transform: translateX(-500%);
+}
+
+#slide_1:checked~.wrapper .slide1 {
+  opacity: 1;
+}
+
+#slide_2:checked~.wrapper .slide2 {
+  opacity: 1;
+}
+
+#slide_3:checked~.wrapper .slide3 {
+  opacity: 1;
+}
+
+#slide_4:checked~.wrapper .slide4 {
+  opacity: 1;
+}
+
+#slide_5:checked~.wrapper .slide5 {
+  opacity: 1;
+}
+
+#slide_6:checked~.wrapper .slide6 {
+  opacity: 1;
+}
+
+
+#slide_1:checked~.wrapper-titles .title {
+  transform: translateX(0);
+}
+
+#slide_2:checked~.wrapper-titles .title {
+  transform: translateX(-100%);
+}
+
+#slide_3:checked~.wrapper-titles .title {
+  transform: translateX(-200%);
+}
+
+#slide_4:checked~.wrapper-titles .title {
+  transform: translateX(-300%);
+}
+
+#slide_5:checked~.wrapper-titles .title {
+  transform: translateX(-400%);
+}
+
+#slide_6:checked~.wrapper-titles .title {
+  transform: translateX(-500%);
+}
+
+
+#slide_1:checked~.wrapper-titles .title:nth-child(1) {
+  opacity: 1;
+}
+
+#slide_2:checked~.wrapper-titles .title:nth-child(2) {
+  opacity: 1;
+}
+
+#slide_3:checked~.wrapper-titles .title:nth-child(3) {
+  opacity: 1;
+}
+
+#slide_4:checked~.wrapper-titles .title:nth-child(4) {
+  opacity: 1;
+}
+
+#slide_5:checked~.wrapper-titles .title:nth-child(5) {
+  opacity: 1;
+}
+
+#slide_6:checked~.wrapper-titles .title:nth-child(6) {
+  opacity: 1;
+}
+
+input {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    justify-content: center;
+  }
+
+  .wrapper-titles {
+    order: 1;
+    max-width: 100%;
+  }
+}
